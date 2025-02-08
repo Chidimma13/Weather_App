@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week1 Homework</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        color: #1a64d6;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .h1 {
+        color: black;
+      }
+
+      .h1 span {
+        font-weight: lighter;
+      }
+      .weather {
+        filter: invert(180deg);
+      }
+
+      .deg {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #4c4b47;
+      }
+
+      .days {
+        margin: 30px auto;
+        transition: all 200ms ease-in-out;
+        font-size: large;
+        padding: 20px 15px 20px 15px;
+        max-width: 400px;
+        border-radius: 5px;
+      }
+      .days:hover {
+        background-color: #fffbef;
+      }
+
+      button {
+        background-color: #1a63d4;
+        color: white;
+        padding: 20px 30px 20px 30px;
+        margin: 5px;
+        border: 1px;
+        border-radius: 50px;
+        box-shadow: 5px #4c4b47;
+        transition: all 150ms ease-in-out;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: white;
+        color: #1a63d4;
+        border: 1px solid #1a63d4;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: large;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span class="weather">🌥️</span>
+      <br />
+      Currently 21&deg; in Tokyo
+      <div class="h1"><span>13&deg; / </span><strong>23&deg;</strong></div>
+    </h1>
+
+    <div class="days">
+      🌧️<strong>Tomorrow</strong>
+      <br />
+      <br />
+      <span class="deg">10&deg; / <strong>22&deg;</strong></span>
+    </div>
+    <div class="days">
+      ☁️<strong>Saturday</strong>
+      <br />
+      <br />
+      <span class="deg">15&deg; / <strong>17&deg;</strong></span>
+    </div>
+    <div class="days">
+      ☀️<strong>Sunday</strong>
+      <br />
+      <br />
+      <span class="deg">25&deg; / <strong>28&deg;</strong></span>
+    </div>
+    <button>Change City</button>
+    <p>Coded by AbatamnonuJesus Okoli</p>
+
+    <script>
+      function city() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+
+        let heading = document.querySelector("h1");
+        if (temperature > 10) {
+          heading.innerHTML =
+            "😃 <br /> Currently " + temperature + "&degC in " + city;
+        } else {
+          heading.innerHTML =
+            "🥶 <br /> Currently " + temperature + "&degC in " + city;
+        }
+      }
+
+      let changeCity = document.querySelector("button");
+      changeCity.addEventListener("click", city);
+    </script>
+  </body>
+</html>
